@@ -1,7 +1,5 @@
-import API from '@/api';
-
 export default () => ({
-    projects: API.getProjects(),
-    header: API.getProjectsHeader(),
+    project: {},
+    project_list: [],
     dialog: null
 })

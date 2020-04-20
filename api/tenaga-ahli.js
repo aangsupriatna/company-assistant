@@ -67,6 +67,7 @@ const getItems = () => {
 }
 
 export {
+    items,
     getHeader,
     getItems
 }

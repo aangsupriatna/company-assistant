@@ -46,7 +46,16 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
   ],
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {
+  },
+  serverMiddleware: ['~/server/api/index.js'],
   /*
   ** Build configuration
   */

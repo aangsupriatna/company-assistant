@@ -16,6 +16,7 @@
             prepend-inner-icon="mdi-magnify"
             label="Search"
             class="hidden-sm-and-down mx-5"
+            v-model="search"
         >
         </v-text-field>
         <v-spacer></v-spacer>
@@ -72,7 +73,8 @@ export default {
     },
     data() {
         return {
-            items: API.getToolbarMenuItems()
+            items: API.getToolbarMenuItems(),
+            search: ""
         }
     },
     methods: {

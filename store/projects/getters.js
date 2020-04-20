@@ -1,12 +1,9 @@
 export default {
     getProjects: (state) => {
-        return state.projects;
+        return state.project_list;
     },
     getProjectById: (state) => (id) => {
-        return state.projects.find(project => {return project.id === id});
-    },
-    getHeader: (state) => {
-        return state.header;
+        return state.project_list.find(project => {return project.id === id});
     },
     getDialog: (state) => {
         return state.dialog;

@@ -1,11 +1,11 @@
 export default {
-    TAMBAH_PROJECT: (state, project) => {
-        state.projects.push({ project })
+    setProjects: (state, projects) => {
+        state.project_list = projects
     },
-    HAPUS_PROJECT: (state, { project }) => {
-        state.projects.splice(state.projects.indexOf(project), 1)
+    setProject: (state, { project }) => {
+        state.project = project
     },
-    TOGGLE_DIALOG: (state) => {
+    toggleDialog: (state) => {
         state.dialog = !state.dialog
     },
 }

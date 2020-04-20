@@ -9,7 +9,7 @@ const headers = [
     { text: 'Actions', align: 'center', value: 'actions', class: 'subtitle-2 font-weight-bold' },
 ];
 
-const projects = [
+const items = [
     {
         id: '0001',
         name: 'Consultan Management Pembangunan Gedung Sekolah Berbasis Partisipasi Masyarakat CLuster 8',
@@ -127,10 +127,11 @@ const getHeader = () => {
 };
 
 const getProjects = () => {
-    return projects;
+    return items;
 };
 
 export {
+    items,
     getHeader,
     getProjects
 };
