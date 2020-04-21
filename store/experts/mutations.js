@@ -1,8 +1,8 @@
 export default {
-    setExperts: (state, experts) => {
-        state.expert_list = experts
+    set: (state, expert) => {
+        state.list = expert
     },
-    setExpert: (state, expert) => {
+    add: (state, expert) => {
         state.expert = expert
     }
 }

@@ -1,9 +1,9 @@
 export default {
     getExperts: (state) => {
-        return state.expert_list
+        return state.list
     },
     getExpertById: (state) => (id) => {
-        return state.expert_list.find(expert => { return expert.id === id })
+        return state.list.find(expert => { return expert.id === id })
     },
 }
 

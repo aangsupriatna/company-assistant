@@ -21,6 +21,9 @@
                         <v-btn icon>
                             <v-icon>mdi-filter</v-icon>
                         </v-btn>
+                        <v-btn color="red lighten-1" icon :disabled="selected.length == 0">
+                            <v-icon>mdi-delete</v-icon>
+                        </v-btn>
                     </v-toolbar>
                     <v-divider></v-divider>
                     <v-card-text class="pa-0">
@@ -29,7 +32,7 @@
                             :headers="headers"
                             :items="experts"
                             :search="search"
-                            item-key="name"
+                            item-key="_id"
                             show-select
                             class="elevation-0"
                         >
@@ -143,23 +146,30 @@ export default {
             ]
         };
     },
-    fetch({ store }) {
-        store.dispatch("experts/getExperts");
+    async fetch({ store }) {
+        await store.dispatch("experts/get");
     },
     computed: {
         experts() {
-            return this.$store.state.experts.expert_list;
+            return this.$store.state.experts.list;
         }
     },
     methods: {
         btnClick(value) {
             console.log(value);
-            this.dialog = false
+            this.dialog = false;
         },
         getColor(pengalaman) {
             if (pengalaman > 25) return "green";
             else if (pengalaman > 10) return "orange";
             else return "red";
+        },
+        deleteItem() {
+            for (var i = 0; i < this.selected.length; i++) {
+                const index = this.desserts.indexOf(this.selected[i]);
+                this.desserts.splice(index, 1);
+            }
+            this.dialog = false;
         }
     }
 };

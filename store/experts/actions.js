@@ -1,12 +1,11 @@
-import API from '@/api'
-
 export default {
-    getExperts: async({ commit }) => {
-        let data = API.getTenagaAhli()
-        await commit('setExperts', data)
+    async get({ commit }) {        
+        let {data} = await this.$axios.get('http://localhost:3000/api/experts')
+        console.log(data)
+        await commit('set', data)
     },
     getExpert: async({commit, store}, id) => {
         let { data } = await axios.get(`experts/${id}`)
-        await commit('setExpert', data)
+        await commit('add', data)
     },
 }
