@@ -62,7 +62,7 @@ import ToolbarListNotification from '@/components/Widgets/Toolbar/ToolbarListNot
 import ToolbarListMessage from '@/components/Widgets/Toolbar/ToolbarListMessage';
 import ToolbarListUser from '@/components/Widgets/Toolbar/ToolbarListUser';
 import { mapMutations } from 'vuex';
-import API from '@/api';
+import API from '@/data';
 
 export default {
     name: 'default-toolbar',

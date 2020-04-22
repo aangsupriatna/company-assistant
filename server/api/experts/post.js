@@ -11,20 +11,20 @@ app.post('/experts/create', (req, res) => {
 
     let project =
     {
-        name: "John Doe",
-        ttl: "Jakarta, 28 Februari 1990",
-        alamat: "Jl. Gatot Subroto No. 27, Jakarta",
-        ktp: "317123456789",
-        npwp: "32201234567",
+        name: "Aang Supriatna",
+        ttl: "Subang, 7 Januari 1985",
+        alamat: "Kp. Katomas, RT. 10/04 Desa Sumbersari Kec. Pagaden Kab. Subang, Jawa Barat - 41252",
+        ktp: "3060123456789",
+        npwp: "3060987654321",
         jenisKelamin: "L",
-        riwayatPendidikan: "S1, Teknik Arsitektur, Universitas Indonesia, 2010",
+        riwayatPendidikan: "D3, Teknik Sipil, Politeknik Negeri Bandung, 2007",
         kewarganegaraan: "Indonesia",
-        statusPepegawaian: "Tidak Tetap",
-        profesiKeahlian: "Ahli Arsitektur",
-        jabatan: "Tenaga Ahli",
-        email: "john@doe.com",
-        pengalamanKerja: "12",
-        sertifikasi: "CERT-02",
+        statusPepegawaian: "Karyawan Tetap",
+        profesiKeahlian: "Ahli Teknik Sipil",
+        jabatan: "Team Leader",
+        email: "sigaang@gmail.com",
+        pengalamanKerja: "27",
+        sertifikasi: "CERT-01",
     }
 
     db.insert(project, function (err, newProject) {

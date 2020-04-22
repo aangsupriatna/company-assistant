@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import API from "@/api";
+import API from "@/data"
 
 export default {
     name: "toolbar-list-message",

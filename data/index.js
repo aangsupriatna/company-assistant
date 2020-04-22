@@ -6,6 +6,7 @@ import * as ToolbarNotification from './toolbar-notification';
 import * as ContentBreadcrumbs from './content-breadcrumbs';
 import * as Project from './projects';
 import * as TenagaAhli from './tenaga-ahli';
+import * as Experts from './tenaga-ahli/headers';
 
 export default {
     getUsers: User.getUsers,
@@ -19,4 +20,5 @@ export default {
     getBreadcrumbsList: ContentBreadcrumbs.getBreadcumbsList,
     getTaHeader: TenagaAhli.getHeader,
     getTenagaAhli: TenagaAhli.getItems,
+    getExpertsTableHeader: Experts.headers,
 }

@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { items as Users } from "@/api/users";
+import { items as Users } from "@/data/users";
 
 export default {
     name: "data-table",
