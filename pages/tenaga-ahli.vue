@@ -5,9 +5,68 @@
                 <v-icon>mdi-account-multiple</v-icon>
                 <v-toolbar-title class="pl-2">Daftar Tenaga Ahli</v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-btn small>
-                    <v-icon small class="pr-2">mdi-account-plus</v-icon> Tambah
-                </v-btn>
+                <v-dialog v-model="addDialog" persistent max-width="600px">
+                    <template v-slot:activator="{ on }">
+                        <v-btn small color="primary" v-on="on">
+                            <v-icon small class="pr-2">mdi-account-plus</v-icon>Tambah
+                        </v-btn>
+                        <!-- <v-btn color="primary" dark v-on="on">Open Dialog</v-btn> -->
+                    </template>
+                    <v-card>
+                        <v-card-title>
+                            <span class="headline">User Profile</span>
+                        </v-card-title>
+                        <v-card-text>
+                            <v-container>
+                                <v-row>
+                                    <v-col cols="12" sm="6" md="4">
+                                        <v-text-field label="Legal first name*" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6" md="4">
+                                        <v-text-field
+                                            label="Legal middle name"
+                                            hint="example of helper text only on focus"
+                                        ></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6" md="4">
+                                        <v-text-field
+                                            label="Legal last name*"
+                                            hint="example of persistent helper text"
+                                            persistent-hint
+                                            required
+                                        ></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12">
+                                        <v-text-field label="Email*" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12">
+                                        <v-text-field label="Password*" type="password" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-select
+                                            :items="['0-17', '18-29', '30-54', '54+']"
+                                            label="Age*"
+                                            required
+                                        ></v-select>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-autocomplete
+                                            :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
+                                            label="Interests"
+                                            multiple
+                                        ></v-autocomplete>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                            <small>*indicates required field</small>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn color="blue darken-1" text @click="addDialog = false">Close</v-btn>
+                            <v-btn color="blue darken-1" text @click="addDialog = false">Save</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-dialog>
             </v-toolbar>
             <v-flex lg12>
                 <v-card outlined>
@@ -39,7 +98,12 @@
                             <template v-slot:item="props">
                                 <tr>
                                     <td>
-                                        <v-checkbox primary hide-details v-model="props.selected" class="ma-0"></v-checkbox>
+                                        <v-checkbox
+                                            primary
+                                            hide-details
+                                            v-model="props.selected"
+                                            class="ma-0"
+                                        ></v-checkbox>
                                     </td>
                                     <td>{{ props.item.name }}</td>
                                     <td>{{ props.item.ttl }}</td>
@@ -117,6 +181,7 @@ export default {
         title: "Daftar Tenaga Ahli"
     },
     data: () => ({
+        addDialog: false,
         dialog: {},
         search: "",
         selected: [],
